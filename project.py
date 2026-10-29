@@ -1,6 +1,6 @@
 """School Management System
 Console app using only the Python standard library (SQLite for storage).
-Run:  python school_syste
+Run:  python school_sys
 """
 import sqlite3
 from datetime import date
