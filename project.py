@@ -8,7 +8,7 @@ from datetime import date
 DB_FILE = "school.db"
 
 
-# ---------- Database ---------
+
 def connect():
     conn = sqlite3.connect(DB_FILE)
     conn.row_factory = sqlite3.Row
@@ -223,12 +223,11 @@ def mark_attendance(conn):
             if key in codes:
                 break
             print("  Enter p, a or l.")
-        conn.execute(
             "INSERT OR REPLACE INTO attendance VALUES (?, ?, ?, ?)",
-            (s["id"], cid, day, codes[key]),
+            (s["id"], cid, day, codes
         )
     conn.commit()
-    print("  Attendance saved.")
+    
 
 
 def report_card(conn):
@@ -308,7 +307,7 @@ def delete_student(conn):
 
 # ---------- Main menu ----------
 MENU = [
-    ("Add student", add_student),
+    ("Add student",
     ("List students", list_students),
     ("Add course", add_course),
     ("List courses", list_courses),
